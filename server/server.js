@@ -16,12 +16,12 @@ const io = socket(app.listen(PORT, () => console.log(`Housten we have lift off o
 
 io.on('connection', socket => {
   console.log('User Connected');
-  // io.emit('message dispatched', 'hello');
-  // EVERYONE
-  // socket.on('message sent', data => {
-  //   console.log(data)
-  //   io.emit('message dispatched', data.message);
-  // })
+  io.emit('message dispatched', 'hello');
+  //EVERYONE
+  socket.on('message sent', data => {
+    console.log(data)
+    io.emit('message dispatched', data.message);
+  })
 
 
   //  EVERYONE BUT ME
